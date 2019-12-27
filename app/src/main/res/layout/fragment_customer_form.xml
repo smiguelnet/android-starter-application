@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Name"
+            android:maxLength="50"
+            android:maxLines="1" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/txt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:maxLength="100"
+            android:maxLines="1" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/txt_birthday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Birthday"
+            android:inputType="date"
+            android:maxLength="12"
+            android:maxLines="1" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Switch
+        android:id="@+id/switch_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="Customer Active" />
+
+    <Button
+        android:id="@+id/btn_add_customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_shape"
+        android:text="save"
+        android:textColor="@color/color_white"
+        android:textSize="16sp" />
+
+    <!-- TRACE -->
+    <TextView
+        android:id="@+id/traceTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Trace Area"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/traceArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_silver"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <!-- TRACE COL 1 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/traceFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="Local Id" />
+
+            <TextView
+                android:id="@+id/txtId"
+                style="@style/traceFontWithMarginBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="[ID]"
+                android:textColor="@color/color_black" />
+
+            <TextView
+                style="@style/traceFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="Insert Local Date" />
+
+            <TextView
+                android:id="@+id/txtInsertLocalDate"
+                style="@style/traceFontWithMarginBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="[INSERT_LOCAL_DATE]"
+                android:textColor="@color/color_black" />
+
+            <TextView
+                style="@style/traceFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="Insert Remote Date" />
+
+            <TextView
+                android:id="@+id/txtInsertDate"
+                style="@style/traceFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="[INSERT_DATE]"
+                android:textColor="@color/color_black" />
+        </LinearLayout>
+
+        <!-- TRACE COL 2 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/traceFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:text="Remote Id" />
+
+            <TextView
+                android:id="@+id/txtIdRef"
+                style="@style/traceFontWithMarginBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:text="[ID_REF]"
+                android:textColor="@color/color_black" />
+
+            <TextView
+                style="@style/traceFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:text="Update Local Date" />
+
+            <TextView
+                android:id="@+id/txtUpdateLocalDate"
+                style="@style/traceFontWithMarginBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:text="[UPDATE_LOCAL_DATE]"
+                android:textColor="@color/color_black" />
+
+            <TextView
+                style="@style/traceFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:text="Update Remote Date" />
+
+            <TextView
+                android:id="@+id/txtUpdateDate"
+                style="@style/traceFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:text="[UPDATE_DATE]"
+                android:textColor="@color/color_black" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">SmiguelNet</string>
+
+    <!-- GENERAL -->
+    <string name="home_title">Home</string>
+    <string name="home_sub_title">smiguel.net</string>
+    <string name="home_lead">Android template and offline app sample</string>
+    <string name="coming_soon">coming soon</string>
+    <string name="about">about</string>
+
+    <!-- BUTTONS -->
+    <string name="btn_next">next</string>
+    <string name="btn_back">back</string>
+    <string name="btn_done">yes, I\'m ready</string>
+    <string name="btn_skip">skip</string>
+    <string name="btn_retry">retry</string>
+    <string name="btn_ok">ok</string>
+    <string name="btn_yes">yes</string>
+    <string name="btn_no">no</string>
+
+
+    <!-- LOGIN -->
+    <string name="logout_title">Confirmation</string>
+    <string name="logout_confirmation_message">Are you sure you want to logout now?</string>
+    <string name="hint_login">Login</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">login</string>
+
+    <!-- SPLASH_SCREEN -->
+    <string name="splash_screen_title">smiguel.net</string>
+
+    <!-- ON_BOARDING -->
+    <string name="screen1_title">Simple</string>
+    <string name="screen1_desc">Parameterized Architecture Model</string>
+
+    <string name="screen2_title">Friendly</string>
+    <string name="screen2_desc">Transitioning requirements into architectural designs</string>
+
+    <string name="screen3_title">Fast</string>
+    <string name="screen3_desc">Don’t start from scratch</string>
+
+    <!-- MENU -->
+    <string name="navigation_drawer_open">open drawer menu</string>
+    <string name="navigation_drawer_close">close drawer menu</string>
+
+    <!-- CUSTOMER -->
+    <string name="customer_list_title">Customers</string>
+    <string name="customer_add_title">Add Customer</string>
+    <string name="customer_update_title">Edit Customer</string>
+
+    <!-- LINKS -->
+    <string name="opt_home">home</string>
+    <string name="opt_customers">customers</string>
+    <string name="opt_logout">Logout</string>
+    <string name="opt_delete">Delete</string>
+
+    <!-- ERRORS -->
+    <string name="error_required_field">Required field</string>
+    <string name="error_invalid_field">Invalid field</string>
+
+    <!-- FRAMEWORKS -->
+    <string-array name="frameworks_list">
+        <item>Android Support library</item>
+        <item>Android Architecture Components</item>
+        <item>Butterknife</item>
+        <item>Dagger</item>
+        <item>RxAndroid, RxRelay and RxLint</item>
+        <item>Gson, OkHttp and Retrofit</item>
+        <item>Priority Job Queue</item>
+        <item>GCM Network Manager</item>
+        <item>Timber</item>
+        <item>Chuck and Stetho</item>
+    </string-array>
+</resources>

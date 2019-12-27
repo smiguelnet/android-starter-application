@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- COLORS -->
+    <color name="color_primary">#00C853</color>
+    <color name="color_secondary">#FE0946</color>
+    <color name="color_silver">#E9E9E9</color>
+    <color name="color_gray">#D9D9D9</color>
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_red">#FFFFFF</color>
+    <color name="color_black">#000000</color>
+    <color name="text_selected">#888</color>
+    <color name="border_item_home">#D7D7D7</color>
+
+    <!-- REFS -->
+    <color name="link_silver">@color/text_selected</color>
+    <color name="color_accent">@color/color_secondary</color>
+    <color name="background_app">@color/color_silver</color>
+    <color name="background_primary">@color/color_primary</color>
+    <color name="background_white">@color/color_white</color>
+    <color name="background_onboarding">@color/color_primary</color>
+    <color name="background_home">@color/color_silver</color>
+    <color name="color_primary_dark">@color/color_black</color>
+
+</resources>

@@ -1,0 +1,195 @@
+apply plugin: 'com.android.application'
+
+project.ext {
+    supportLibraryVersion = "27.1.0"
+    cardview = "26.1.+"
+    constraintLayoutVersion = "1.0.2"
+    androidArchVersion = "1.1.+"
+    rxJavaVersion = "2.1.0"
+    rxAndroidVersion = "2.0.1"
+    rxRelayVersion = "2.0.0"
+    rxLintVersion = "1.6"
+    junitVersion = "4.12"
+    butterKnifeVersion = "8.7.0"
+    daggerVersion = "2.14.1"
+    retrofitVersion = "2.4.0"
+    okHttpVersion = "3.9.0"
+    gsonVersion = "2.8.2"
+    chuckVersion = "1.1.0"
+    stethoVersion = "1.5.0"
+    testRunnerVersion = "1.0.1"
+    espressoVersion = "3.0.1"
+    timberVersion = "4.5.1"
+    priorityJobQueueVersion = "2.0.1"
+    playServicesVersion = "11.4.2"
+}
+
+android {
+    signingConfigs {
+        signconfig {
+            keyAlias '[YOUR-KEY-ALIAS]'
+            keyPassword '[YOUR-KEY-PASSWORD]'
+            storeFile file('/Users/smiguelnet/SETIA/GitProjects/mobile/projects/keystore/smiguel-net-ks')
+            storePassword '[YOUR-STORE-PASSWORD]'
+        }
+    }
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId 'net.smiguel.mobile.app'
+        minSdkVersion 21
+        targetSdkVersion 21
+        multiDexEnabled true
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        // Endpoint use cache
+        buildConfigField("Boolean", "APP_ENDPOINT_USE_HTTP_CACHE", "${AppEndpointUseHttpCache}")
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.signconfig
+        }
+        debug {
+            minifyEnabled false
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    flavorDimensions "api"
+    productFlavors {
+        local {
+            dimension "api"
+            applicationIdSuffix ".local"
+            versionNameSuffix ""
+            // Endpoint Url
+            buildConfigField("String", "APP_ENDPOINT_URL", "\"${AppEndpointUrl_Dev}\"")
+        }
+
+        homolog {
+            dimension "api"
+            applicationIdSuffix ".homolog"
+            versionNameSuffix "-homolog"
+            // Endpoint Url
+            buildConfigField("String", "APP_ENDPOINT_URL", "\"${AppEndpointUrl_Hom}\"")
+        }
+
+        production {
+            dimension "api"
+            applicationIdSuffix ".prod"
+            versionNameSuffix "-prod"
+            // Endpoint Url
+            buildConfigField("String", "APP_ENDPOINT_URL", "\"${AppEndpointUrl_Prod}\"")
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/license/LICENSE.base64.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/rxjava.properties'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    //Support library
+    implementation "com.android.support:cardview-v7:${project.supportLibraryVersion}"
+    implementation "com.android.support:appcompat-v7:${project.supportLibraryVersion}"
+    implementation "com.android.support:design:${project.supportLibraryVersion}"
+    implementation "com.android.support:recyclerview-v7:${project.supportLibraryVersion}"
+    implementation "com.android.support:support-annotations:${project.supportLibraryVersion}"
+    implementation "com.android.support:gridlayout-v7:${project.supportLibraryVersion}"
+    implementation "com.android.support.constraint:constraint-layout:${project.constraintLayoutVersion}"
+    implementation "com.android.support:support-compat:${project.constraintLayoutVersion}"
+
+    // Tests
+    testImplementation "junit:junit:${project.junitVersion}"
+    androidTestImplementation "com.android.support.test:runner:${project.testRunnerVersion}"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:${project.espressoVersion}"
+
+    // Butterknife
+    compile "com.jakewharton:butterknife:${project.butterKnifeVersion}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${project.butterKnifeVersion}"
+
+    // Dagger
+    compile "com.google.dagger:dagger-android:${project.daggerVersion}"
+    compile "com.google.dagger:dagger-android-support:${project.daggerVersion}"
+    annotationProcessor "com.google.dagger:dagger-android-processor:${project.daggerVersion}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${project.daggerVersion}"
+
+    // ReactiveX
+    implementation "io.reactivex.rxjava2:rxjava:$project.rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$project.rxAndroidVersion"
+
+    // RxRelay
+    implementation "com.jakewharton.rxrelay2:rxrelay:${project.rxRelayVersion}"
+
+    // RxLint
+    implementation "nl.littlerobots.rxlint:rxlint:${project.rxLintVersion}"
+
+    // ViewModel and LiveData
+    implementation "android.arch.lifecycle:extensions:${project.androidArchVersion}"
+    annotationProcessor "android.arch.lifecycle:compiler:${project.androidArchVersion}"
+
+    // Java8 support for Lifecycles
+    implementation "android.arch.lifecycle:common-java8:${project.androidArchVersion}"
+
+    // Room (use 1.1.0-alpha3 for latest alpha)
+    implementation "android.arch.persistence.room:runtime:${project.androidArchVersion}"
+    annotationProcessor "android.arch.persistence.room:compiler:${project.androidArchVersion}"
+
+    // RxJava support for Room (use 1.1.0-alpha3 for latest alpha)
+    implementation "android.arch.persistence.room:rxjava2:${project.androidArchVersion}"
+
+    // ReactiveStreams support for LiveData
+    implementation "android.arch.lifecycle:reactivestreams:${project.androidArchVersion}"
+
+    // Gson
+    implementation "com.google.code.gson:gson:${project.gsonVersion}"
+
+    // OkHttp
+    implementation "com.squareup.okhttp3:okhttp:${project.okHttpVersion}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${project.okHttpVersion}"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:${project.retrofitVersion}"
+
+    // Retrofit Converter
+    implementation "com.squareup.retrofit2:converter-gson:${project.retrofitVersion}"
+    implementation("com.squareup.retrofit2:converter-simplexml:${project.retrofitVersion}") {
+        exclude group: 'xpp3', module: 'xpp3'
+        exclude group: 'stax', module: 'stax-api'
+        exclude group: 'stax', module: 'stax'
+    }
+
+    // Retrofit Adapter
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${project.retrofitVersion}"
+
+    // Chuck Http Interceptor
+    debugCompile "com.readystatesoftware.chuck:library:${project.chuckVersion}"
+    releaseCompile "com.readystatesoftware.chuck:library-no-op:${project.chuckVersion}"
+
+    //Stetho
+    implementation "com.facebook.stetho:stetho:${stethoVersion}"
+    implementation "com.facebook.stetho:stetho-okhttp3:${stethoVersion}"
+
+    // Timber
+    implementation "com.jakewharton.timber:timber:${project.timberVersion}"
+
+    // Priority Job Queue
+    implementation "com.birbit:android-priority-jobqueue:${project.priorityJobQueueVersion}"
+
+    // GCM Network Manager
+    implementation "com.google.android.gms:play-services-gcm:${project.playServicesVersion}"
+}

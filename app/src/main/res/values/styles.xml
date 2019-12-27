@@ -1,0 +1,58 @@
+<resources>
+
+    <!-- BASE APPLICATION THEME -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/color_white</item>
+    </style>
+
+    <style name="closeArrow" parent="Widget.AppCompat.Light.ActionButton.CloseMode">
+        <item name="android:tint">@color/color_white</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.ProgressBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
+    <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/color_white</item>
+    </style>
+
+    <style name="ActionBarIcon" parent="Widget.AppCompat.ActionBar">
+        <item name="color">@color/color_white</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="AppTheme.NoActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="traceFont">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="traceFontWithMarginBottom" parent="traceFont">
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="textWhite">
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+</resources>

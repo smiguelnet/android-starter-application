@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/opt_home" />
+
+        <item
+            android:id="@+id/nav_customer"
+            android:icon="@drawable/ic_users"
+            android:iconTint="@color/color_primary"
+            android:title="@string/opt_customers" />
+
+        <item
+            android:enabled="false"
+            android:icon="@drawable/ic_event"
+            android:iconTint="@color/color_silver"
+            android:title="@string/coming_soon" />
+
+        <item
+            android:enabled="false"
+            android:icon="@drawable/ic_event"
+            android:iconTint="@color/color_silver"
+            android:title="@string/coming_soon" />
+        <item
+            android:enabled="false"
+            android:icon="@drawable/ic_event"
+            android:iconTint="@color/color_silver"
+            android:title="@string/coming_soon" />
+
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_info"
+            android:iconTint="@color/color_primary"
+            android:title="@string/about" />
+
+        <item
+            android:id="@+id/nav_exit"
+            android:icon="@drawable/ic_exit_app"
+            android:iconTint="@color/color_primary"
+            android:title="@string/opt_logout" />
+    </group>
+</menu>
+
+
